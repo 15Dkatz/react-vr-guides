@@ -1,33 +1,28 @@
-import React from 'react';
-import {
-  AppRegistry,
-  asset,
-  Pano,
-  Text,
-  View,
-} from 'react-vr';
+import React, { Component } from 'react';
 
-export default class Basics extends React.Component {
+import { AppRegistry, asset, Pano, View, Text } from 'react-vr';
+
+export default class Basics extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      showSign: true
+    };
+
+    // setInterval(() => this.setState({showSign: !this.state.showSign}), 1000);
+  }
+
   render() {
+    let message = this.state.showSign === true ? 'Welcome to VR land' : ' ';
+
+
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')}/>
-        <Text
-          style={{
-            backgroundColor: '#777879',
-            fontSize: 0.8,
-            fontWeight: '400',
-            layoutOrigin: [0.5, 0.5],
-            paddingLeft: 0.2,
-            paddingRight: 0.2,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            transform: [{translate: [0, 0, -3]}],
-          }}>
-          welcome
-        </Text>
+        <Pano source={asset('starry-sky.jpg')}></Pano>
+        <Text style={{fontSize: 0.1, transform: [{translate: [-1, 0, -2]}]}}>{message}</Text>
       </View>
-    );
+    )
   }
 };
 
