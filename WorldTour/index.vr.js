@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { View, Text, Pano, AppRegistry, asset, StyleSheet } from 'react-vr';
 
+// Can create a file for places as a db.json 
+
 const places = [
   {
     title: 'Island Paradise',
